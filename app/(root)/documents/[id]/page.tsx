@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import { Editor } from "@/components/editor/Editor";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { PhoneCall } from "lucide-react";
 import React from "react";
 
@@ -8,8 +9,14 @@ const Document = () => {
     <div>
       <Header>
         <div className="flex w-fit items-center justify-center gap-2">
-          <p className="document-title">Test Title</p>
+          <p className="document-title">Share</p>
         </div>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </Header>
       <Editor />
     </div>
